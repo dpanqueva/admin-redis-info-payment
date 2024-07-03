@@ -1,0 +1,21 @@
+# fly.toml app configuration file generated for admin-redis-info-payment on 2024-06-08T12:04:43-05:00
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = 'admin-redis-info-payment'
+primary_region = 'bog'
+
+[build]
+
+[http_service]
+  internal_port = 8080
+  auto_stop_machines = false
+  auto_start_machines = false
+  min_machines_running = 1
+  processes = ['app']
+
+[[vm]]
+  memory = '512mb'
+  cpu_kind = 'shared'
+  cpus = 1
